@@ -36,3 +36,118 @@
     transform: rotate(360deg);
   }
 }
+
+.Input-wrapper,
+.Select-wrapper {
+  border: solid 1px #c4c4c4;
+  border-radius: 6px;
+  margin-block-start: 16px;
+  max-width: 439px;
+}
+
+.Input-label,
+input,
+select {
+  font-size: 16px;
+  text-align: left;
+  line-height: 1.63;
+  letter-spacing: -0.52px;
+  color: #c4c4c4;
+}
+
+input,
+select {
+  border: none;
+  background-color: transparent;
+  padding-block-end: 8px;
+  padding-block-start: 8px;
+  color: #c4c4c4;
+}
+
+select {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.Random-botton {
+  background-color: #34394f;
+  text-align: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.63;
+  max-width: 555px;
+  letter-spacing: -0.52px;
+  padding-block-end: 15px;
+  padding-block-start: 16px;
+  padding-inline-end: 108px;
+  padding-inline-start: 108px;
+  margin-block-end: 52px;
+  margin-block-start: 32px;
+  border-radius: 6px;
+  color: #ffffff;
+}
+
+.Counter-save-button {
+  background-color: #f5f6f8;
+}
+.Counter-save-button,
+button,
+span {
+  color: #34394f;
+}
+
+.Counter-save-button {
+  text-align: center;
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-block-end: 19px;
+  padding-block-start: 18px;
+  border-radius: 6px;
+}
+
+.Counter-save-button button {
+  background-color: transparent;
+  border: solid 2px #34394f;
+  max-width: 24px;
+  border-radius: 50%;
+}
+
+.Couter-button-decreased {
+  padding-block-start: 2px;
+  padding-block-end: 2px;
+  padding-inline-end: 7px;
+  padding-inline-start: 7px;
+}
+
+.Couter-button-increased {
+  padding-block-start: 2px;
+  padding-block-end: 2px;
+  padding-inline-end: 5px;
+  padding-inline-start: 5px;
+}
+
+.Save-jokes-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Save-jokes-button {
+  background-color: #f5f6f8;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.63;
+  letter-spacing: -0.52px;
+  width: 62%;
+  padding-block-end: 17px;
+  padding-block-start: 16px;
+  color: #34394f;
+  border: none;
+  border-radius: 6px;
+}
