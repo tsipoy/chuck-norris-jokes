@@ -13,6 +13,10 @@
   }
 }
 
+button {
+  cursor: pointer;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -37,12 +41,23 @@
   }
 }
 
-.Input-wrapper,
-.Select-wrapper {
+img {
+  width: 100%;
+  height: auto;
+}
+
+.Input,
+.Select {
   border: solid 1px #c4c4c4;
   border-radius: 6px;
   margin-block-start: 16px;
-  max-width: 439px;
+  width: 459px;
+}
+
+.Select {
+  padding-block-end: 20px;
+  padding-block-start: 21px;
+  width: 465px;
 }
 
 .Input-label,
@@ -52,15 +67,13 @@ select {
   text-align: left;
   line-height: 1.63;
   letter-spacing: -0.52px;
-  color: #c4c4c4;
 }
 
 input,
 select {
-  border: none;
   background-color: transparent;
-  padding-block-end: 8px;
-  padding-block-start: 8px;
+  padding-block-end: 16px;
+  padding-block-start: 15px;
   color: #c4c4c4;
 }
 
@@ -73,7 +86,6 @@ select {
 .Random-botton {
   background-color: #34394f;
   text-align: center;
-  cursor: pointer;
   font-size: 16px;
   font-weight: 600;
   line-height: 1.63;
@@ -111,24 +123,26 @@ span {
 }
 
 .Counter-save-button button {
+  font-size: 16px;
+  font-weight: 600;
   background-color: transparent;
-  border: solid 2px #34394f;
   max-width: 24px;
+  border: solid 2px #34394f;
   border-radius: 50%;
 }
 
 .Couter-button-decreased {
   padding-block-start: 2px;
   padding-block-end: 2px;
-  padding-inline-end: 7px;
-  padding-inline-start: 7px;
+  padding-inline-end: 13px;
+  padding-inline-start: 9px;
 }
 
 .Couter-button-increased {
   padding-block-start: 2px;
   padding-block-end: 2px;
-  padding-inline-end: 5px;
-  padding-inline-start: 5px;
+  padding-inline-end: 16px;
+  padding-inline-start: 6px;
 }
 
 .Save-jokes-wrapper {

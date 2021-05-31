@@ -1,28 +1,32 @@
-import { pseudoRandomBytes } from "crypto";
-import { type } from "os";
 import React, { useContext } from "react";
 import {Context} from "./context/Context";
+import Image from "./assets/chuck-norris-photo@2x.png";
 
 type Props = {
     randomJokes?: string[]
+    value?: string[]
+    setRandomJokes?: React.Dispatch<React.SetStateAction<any>>
 }
 
 const RandomJokes: React.FC<Props> = () => {
-    const {randomJokes} = useContext(Context);  
+    const {randomJokes, setRandomJokes} = useContext(Context);
+    const jokes = randomJokes.map((randomJoke) =><i key={randomJoke}>{randomJoke}</i>)
+    const randoms = jokes[Math.floor(Math.random() * jokes.length)];
+
+    const handleRandom = () => {
+        setRandomJokes(jokes)
+    }
     return (
         <div>
-        <div>{randomJokes.map((randomJoke) => <p key={randomJoke}>{randomJoke}</p>)}</div>
+            <img src={Image} alt="random-photo" />
+            <div>{randoms}</div>
             <form>
-                <fieldset className="Select-wrapper">
-                    <select placeholder="Categories">
-                        <option value="null">Categories</option>
-                    </select>
-                </fieldset>
-                <fieldset className="Input-wrapper">
-                    <input type="text" placeholder="Input-label" />
-                </fieldset>
+                <select placeholder="Categories" className="Select">
+                    <option value="null">Categories</option>
+                </select>
+                <input type="text" placeholder="Impersonate Chuck Norris" className="Input" />
             </form>
-            <button className="Random-botton">Draw a random Chuck Norris Joke</button>
+            <button className="Random-botton" onClick={handleRandom}>Draw a random Chuck Norris Joke</button>
             <div className="Save-jokes-wrapper">
                 <div className="Counter-save-button">
                     <button className="Couter-button-decreased">-</button>
