@@ -13,10 +13,6 @@
   }
 }
 
-button {
-  cursor: pointer;
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -41,23 +37,62 @@ button {
   }
 }
 
+.Container {
+  background-color: #ffffff;
+  max-width: 555px;
+  margin: auto;
+  padding-block-start: 48px;
+  padding-block-end: 72px;
+  padding-inline-end: 58px;
+  padding-inline-start: 58px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08);
+}
+
+button {
+  cursor: pointer;
+}
 img {
   width: 100%;
   height: auto;
+  border-radius: 2px;
 }
 
-.Input,
+.Joke-wrapper {
+  padding-block-end: 1px;
+}
+
+.Joke-wrapper p {
+  color: #34394f;
+  font-size: 18px;
+  align-items: left;
+}
+
 .Select {
+  width: 100%;
+  margin-block-start: 16px;
+  padding-inline-start: 16px;
+  padding-block-end: 16px;
+  padding-block-start: 18px;
   border: solid 1px #c4c4c4;
   border-radius: 6px;
-  margin-block-start: 16px;
-  width: 459px;
+  color: #34394f;
 }
 
-.Select {
-  padding-block-end: 20px;
-  padding-block-start: 21px;
-  width: 465px;
+.Category {
+  color: #c4c4c4;
+  background-color: transparent;
+  border: none;
+}
+
+.Category:hover {
+  background-color: #e9e9e9;
+}
+
+option:hover {
+  background-color: #c4c4c4;
+  /* padding-block-end: 18px;
+  padding-block-start: 18px; */
 }
 
 .Input-label,
@@ -75,26 +110,65 @@ select {
   padding-block-end: 16px;
   padding-block-start: 15px;
   color: #c4c4c4;
+  border: none;
 }
 
 select {
+  /* background-color: url("./logo.svg");
+  background-size: 100%;
+  background-repeat: no-repeat; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
+
+.Input_wrapper {
+  width: 97%;
+  position: relative;
+  margin-block-start: 16px;
+  padding-inline-start: 16px;
+  border: solid 1px #c4c4c4;
+  border-radius: 6px;
+}
+
+select:focus,
+.Input_wrapper .Input:focus {
+  border: solid 2px #34394f;
+}
+
+.Input_wrapper .Input {
+  position: relative;
+  left: -3.5%;
+  width: 100%;
+  padding-inline-start: 15px;
+}
+
+.Input_wrapper .Input-label {
+  position: absolute;
+  top: 29%;
+  left: 5%;
+  font-size: 16px;
+  line-height: 26px;
+  color: #c4c4c4;
+  margin-inline-start: -11px;
+}
+
+.Input:focus ~ .Input-label {
+  font-size: 14px;
+  top: 0;
+}
+
 .Random-botton {
   background-color: #34394f;
   text-align: center;
   font-size: 16px;
   font-weight: 600;
   line-height: 1.63;
-  max-width: 555px;
+  width: 100%;
   letter-spacing: -0.52px;
   padding-block-end: 15px;
   padding-block-start: 16px;
-  padding-inline-end: 108px;
-  padding-inline-start: 108px;
   margin-block-end: 52px;
   margin-block-start: 32px;
   border-radius: 6px;
@@ -104,6 +178,7 @@ select {
 .Counter-save-button {
   background-color: #f5f6f8;
 }
+
 .Counter-save-button,
 button,
 span {
@@ -117,8 +192,8 @@ span {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  padding-block-end: 19px;
-  padding-block-start: 18px;
+  padding-block-end: 14px;
+  padding-block-start: 17px;
   border-radius: 6px;
 }
 
@@ -158,9 +233,9 @@ span {
   font-weight: 500;
   line-height: 1.63;
   letter-spacing: -0.52px;
-  width: 62%;
-  padding-block-end: 17px;
-  padding-block-start: 16px;
+  width: 68%;
+  padding-block-end: 16px;
+  padding-block-start: 14px;
   color: #34394f;
   border: none;
   border-radius: 6px;
