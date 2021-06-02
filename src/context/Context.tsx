@@ -43,7 +43,7 @@ const ContextProvider: React.FC = ({ children }) => {
     // Fetch jokes value
     const getRandomJokes = async (firstName: string='Chuck', lastName: string='Norris', number: number=1, categories: string[]=[]) => {
         try {
-            const url = `http://api.icndb.com/jokes/random/${number}?firstName=${firstName}&lastName=${lastName}`;
+            const url = `https://api.icndb.com/jokes/random/${number}?firstName=${firstName}&lastName=${lastName}`;
             const response = await fetch(url);
             const {value} = await response.json() as {value: {joke:string}[]}
             const jokes = value.map((jokeData) => jokeData.joke)
@@ -56,7 +56,7 @@ const ContextProvider: React.FC = ({ children }) => {
     //Fetch category value
     const getCategoriesValue = async () => {
         try {
-            const categoriesUrl = 'http://api.icndb.com/categories';
+            const categoriesUrl = 'https://api.icndb.com/categories';
             const res = await fetch(categoriesUrl);
             const {value} = await res.json();
             const values = value.map((category: any, key: any) => <option value={category} key={category}>{category}</option>)
