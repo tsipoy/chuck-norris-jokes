@@ -1,68 +1,74 @@
-import React, { useContext, MouseEvent} from "react";
+import React, { useContext, useEffect} from "react";
 import {Context} from "./context/Context";
-import Image from "./assets/chuck-norris-photo@2x.png";
+import photo from "./assets/chuck-norris-photo@2x.png";
+import randomPhoto from "./assets/random-photo.png";
+
 
 type Props = {
     randomJokes?: string[]
     value?: string[]
     setRandomJokes?: React.Dispatch<React.SetStateAction<any>>
     firstName?: string
-    setFirstName?: React.Dispatch<React.SetStateAction<any>>
+    setName?: React.Dispatch<React.SetStateAction<any>>
     setCounter?: React.Dispatch<React.SetStateAction<any>>
     counter?: number
+    categories?: string[]
 }
 
 const RandomJokes: React.FC<Props> = () => {
-    const {randomJokes, 
+    const {
+        randomJokes, 
         setRandomJokes,
-        firstName, 
-        lastName, 
-        setFirstName, 
-        setLastName,
+        name,
+        setName, 
         counter, 
-        setCounter 
+        setCounter,
+        getRandomJokes,
+        getCategoriesValue,
+        categories,
+        setCategories
     } = useContext(Context);
 
-    const jokes = randomJokes.map((randomJoke) =><i key={randomJoke}>{randomJoke}</i>)
-    const randoms = jokes[Math.floor(Math.random() * jokes.length)];
-
+    const joke = randomJokes[0]
 
     const handleRandom = () => {
-        setRandomJokes(jokes)
+        const [firstName, lastName] = name.split(' ');
+        getRandomJokes(firstName, lastName)
     }
 
     const handleIncreased = () => {
         setCounter(counter + 1)
-        return false
     }
 
     const handleDecreased = () => { 
         if(counter > 0) {
             setCounter(counter - 1)
         }
-        return false
     }
+    
+    useEffect(() => {
+        getRandomJokes();
+        getCategoriesValue();
+    },[])
 
     return (
         <div className="Container">
-            <img src={Image} alt="Random photo" />
+            <img src={photo} alt="Random photo" />
             <div className="Joke-wrapper">
-                <p>"{randoms}"</p>
+                <p>"{joke}"</p>
             </div>
             <form>
-                <select placeholder="Categories" className="Select">
-                    <ul>
-                        <option value="explicit">Explicite</option>
-                        <option value="nerdy">Nerdy</option>
-                    </ul>
+                <select className="Select">
+                    <option value="null" className="Category">Select category</option>
+                    {categories}
                 </select>
                 <div className="Input_wrapper">
                     <input 
                         id="Input-label"
                         type="text"  
                         className="Input" 
-                        value={firstName} 
-                        onChange={(e) => setFirstName(e.currentTarget.value)} 
+                        value={name} 
+                        onChange={(e) => setName(e.currentTarget.value)} 
                     />
                     <label className="Input-label">Impersonate Chuck Norris</label>
                 </div>
