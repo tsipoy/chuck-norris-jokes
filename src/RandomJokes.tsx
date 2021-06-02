@@ -7,7 +7,7 @@ type Props = {
     randomJokes?: string[]
     value?: string[]
     setRandomJokes?: React.Dispatch<React.SetStateAction<any>>
-    firstName?: string
+    name?: string
     setName?: React.Dispatch<React.SetStateAction<any>>
     setCounter?: React.Dispatch<React.SetStateAction<any>>
     counter?: number
@@ -17,7 +17,6 @@ type Props = {
 const RandomJokes: React.FC<Props> = () => {
     const {
         randomJokes, 
-        setRandomJokes,
         name,
         setName, 
         counter, 
@@ -25,7 +24,6 @@ const RandomJokes: React.FC<Props> = () => {
         getRandomJokes,
         getCategoriesValue,
         categories,
-        setCategories
     } = useContext(Context);
 
     const joke = randomJokes[0]
@@ -48,11 +46,12 @@ const RandomJokes: React.FC<Props> = () => {
     useEffect(() => {
         getRandomJokes();
         getCategoriesValue();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
     return (
         <div className="Container">
-            <img src={photo} alt="Random photo" />
+            <img src={name === "" ? photo : randomPhoto} alt="Random photos" />
             <div className="Joke-wrapper">
                 <p>"{joke}"</p>
             </div>
