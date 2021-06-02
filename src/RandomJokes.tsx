@@ -3,7 +3,6 @@ import {Context} from "./context/Context";
 import photo from "./assets/chuck-norris-photo@2x.png";
 import randomPhoto from "./assets/random-photo.png";
 
-
 type Props = {
     randomJokes?: string[]
     value?: string[]
