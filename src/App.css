@@ -96,16 +96,22 @@ option:hover {
 }
 
 .Input-label,
-input,
-select {
+.Input,
+.Select {
   font-size: 16px;
   text-align: left;
   line-height: 1.63;
   letter-spacing: -0.52px;
 }
 
-input,
-select {
+.Select {
+  background-color: transparent;
+  padding-block-end: 21px;
+  padding-block-start: 19px;
+  color: #34394f;
+}
+
+.Input {
   background-color: transparent;
   padding-block-end: 16px;
   padding-block-start: 15px;
@@ -113,7 +119,7 @@ select {
   border: none;
 }
 
-select {
+.Select {
   /* background-color: url("./logo.svg");
   background-size: 100%;
   background-repeat: no-repeat; */
@@ -132,7 +138,7 @@ select {
   border-radius: 6px;
 }
 
-select:focus,
+.Select:focus,
 .Input_wrapper .Input:focus {
   border: solid 2px #34394f;
 }
@@ -181,8 +187,20 @@ select:focus,
 
 .Counter-save-button,
 button,
-span {
+.Counter-input {
   color: #34394f;
+}
+
+.Counter-input {
+  background-color: transparent;
+  width: 20%;
+  font-size: 18px;
+  text-align: center;
+  border: none;
+}
+
+.Counter-input:focus {
+  outline: none;
 }
 
 .Counter-save-button {

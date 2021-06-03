@@ -51,7 +51,7 @@ const RandomJokes: React.FC<Props> = () => {
 
     return (
         <div className="Container">
-            <img src={name === "" ? photo : randomPhoto} alt="Random photos" />
+            <img src={name === "" ? photo : randomPhoto} alt="Random photo" />
             <div className="Joke-wrapper">
                 <p>"{joke}"</p>
             </div>
@@ -82,7 +82,7 @@ const RandomJokes: React.FC<Props> = () => {
                         className="Couter-button-decreased" 
                         onClick={handleDecreased}
                     >-</button>
-                    <span>{counter}</span>
+                    <input className="Counter-input" value={counter} onChange={(e) => e.target.value}/>
                     <button 
                         type="button" 
                         className="Couter-button-increased" 
